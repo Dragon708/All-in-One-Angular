@@ -1,0 +1,20 @@
+<!-- app.component.html -->
+
+<div
+  class="grid h-[450px] w-full grid-cols-1 gap-4 overflow-y-scroll scroll-smooth md:grid-cols-2 lg:grid-cols-3"
+>
+  <div
+    *ngFor="let noticia of listNoticias"
+    class="rounded-lg bg-white p-4 shadow-md"
+  >
+    <span class="text-xs text-gray-600">{{ noticia.source.name }}</span>
+    <h5 class="mb-2 text-lg font-semibold">{{ noticia.title }}</h5>
+    <p class="mb-4 text-sm text-gray-600">{{ noticia.description }}</p>
+    <a
+      [href]="noticia.url"
+      target="_blank"
+      class="text-sm text-blue-500 hover:underline"
+      >Ver Noticia</a
+    >
+  </div>
+</div>

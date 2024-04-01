@@ -1,0 +1,42 @@
+<div>
+  <p-toast
+    [breakpoints]="{ '640px': { width: '100%', right: '0', left: '0' } }"
+  ></p-toast>
+  <div
+    class="m-2 rounded-xl bg-white p-4 text-gray-700"
+    *ngIf="ListaDeCitas.length === 0"
+  >
+    <h1 class="text-center text-3xl">No Hay Citas</h1>
+  </div>
+  <div>
+    <div *ngIf="ListaDeCitas.length !== 0">
+      <div class="flex justify-center pt-2 text-2xl text-gray-700">
+        Lista De Citas
+      </div>
+      <div
+        class="m-3 rounded-xl bg-white p-4 text-left text-gray-700 shadow-2xl"
+        *ngFor="let cita of ListaDeCitas; let i = index"
+      >
+        <div class="p-1">
+          <span class="p-2 font-bold">Nombre:</span> {{ cita.nombre }}
+        </div>
+        <div class="p-1">
+          <span class="p-2 font-bold">Fecha:</span> {{ cita.fecha }}
+        </div>
+        <div class="p-1">
+          <span class="p-2 font-bold">Hora:</span>{{ cita.hora }}
+        </div>
+        <div class="p-1">
+          <span class="p-2 font-bold">Sistomas:</span>
+          {{ cita.sintomas }}
+        </div>
+        <button
+          (click)="eliminarCita(i); show('La Cita A sido Eliminada', 'error')"
+          class="w-full rounded-md bg-red-500 p-2 text-white transition-all duration-200 hover:bg-red-600"
+        >
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+<div class="m-2 rounded-xl p-4">
+  <p-toast
+    [breakpoints]="{ '640px': { width: '100%', right: '0', left: '0' } }"
+  ></p-toast>
+  <div>
+    <h1 class="flex justify-center text-2xl text-gray-700">Agregar Cita</h1>
+  </div>
+  <div class="flex h-full w-full justify-center font-normal">
+    <form
+      [formGroup]="formgroup"
+      class="w-full p-2 mobile:p-0"
+      (ngSubmit)="
+        agregarCita($event);
+        show('La Cita A sido Agendada Correctamente', 'success')
+      "
+    >
+      <div class="mb-3 block mobile:m-2">
+        <div class="text-left text-lg font-semibold text-gray-700">
+          <label for="nombre">Nombre</label>
+        </div>
+        <div>
+          <input
+            class="w-full rounded-lg border-2 border-black p-2"
+            type="text"
+            placeholder="Ingrese Su Nombre"
+            formControlName="citaCtrl"
+            id="cita"
+          />
+        </div>
+        <div
+          *ngIf="
+            formgroup.controls['citaCtrl'].dirty ||
+            (formgroup.controls['citaCtrl'].touched &&
+              formgroup.controls['citaCtrl'].errors)
+          "
+        >
+          <small
+            class="pl-3 text-red-500"
+            *ngIf="formgroup.controls['citaCtrl'].getError('required')"
+            >El Campo Es Requerido</small
+          >
+          <small
+            class="pl-3 text-red-500"
+            *ngIf="formgroup.controls['citaCtrl'].getError('minlength')"
+            >El Minimo de Caracteres Es 2</small
+          >
+          <small
+            class="pl-3 text-red-500"
+            *ngIf="formgroup.controls['citaCtrl'].getError('maxlength')"
+            >El Maximo de Caracteres Es 20</small
+          >
+        </div>
+      </div>
+      <div class="mb-6 block mobile:m-2">
+        <div class="text-left text-lg font-semibold text-gray-700">
+          <label for="fecha">Fecha</label>
+        </div>
+        <div>
+          <input
+            class="w-full rounded-lg border-2 border-black p-2"
+            type="date"
+            formControlName="fechaCtrl"
+            id="fecha"
+          />
+        </div>
+        <div
+          *ngIf="
+            formgroup.controls['fechaCtrl'].dirty ||
+            (formgroup.controls['fechaCtrl'].touched &&
+              formgroup.controls['fechaCtrl'].errors)
+          "
+        >
+          <small
+            class="pl-3 text-red-500"
+            *ngIf="formgroup.controls['fechaCtrl'].getError('required')"
+            >El Campo Es Requerido</small
+          >
+        </div>
+        <div class="mb-6 block mobile:m-2">
+          <div class="text-left text-lg font-semibold text-gray-700">
+            <label for="Hora">Hora</label>
+          </div>
+          <div>
+            <input
+              class="w-full rounded-lg border-2 border-black p-2"
+              type="time"
+              formControlName="horaCtrl"
+              id="Hora"
+            />
+          </div>
+          <div
+            *ngIf="
+              formgroup.controls['horaCtrl'].dirty ||
+              (formgroup.controls['horaCtrl'].touched &&
+                formgroup.controls['horaCtrl'].errors)
+            "
+          >
+            <small
+              class="pl-3 text-red-500"
+              *ngIf="formgroup.controls['horaCtrl'].getError('required')"
+              >El Campo Es Requerido</small
+            >
+          </div>
+        </div>
+        <div class="mb-6 block mobile:m-2">
+          <div class="text-left text-lg font-semibold text-gray-700">
+            <label for="Sintoma">Sintoma</label>
+          </div>
+          <div>
+            <textarea
+              class="w-full rounded-lg border-2 border-black p-2"
+              formControlName="sintomaCtrl"
+              placeholder="Ingrese Sus Sintomas"
+              id="Sintoma"
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full rounded-md p-2 text-white transition-all duration-200"
+            [ngClass]="
+              formgroup.invalid
+                ? 'bg-gray-600 hover:bg-gray-600'
+                : 'bg-blue-500 hover:bg-blue-600 '
+            "
+            [disabled]="formgroup.invalid"
+          >
+            Agregar Cita
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

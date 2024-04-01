@@ -1,0 +1,69 @@
+<div class="flex items-center justify-center text-center mobile:block">
+  <p-toast></p-toast>
+
+  <div
+    class="flex h-[100%] w-[50%] items-center justify-center p-4 mobile:ml-6 mobile:h-[80%] mobile:w-[80%]"
+  >
+    <div class="flex items-center justify-center">
+      <img
+        src="../../../../assets/Weather-PNG-Background.png"
+        alt=""
+        class="flex items-center justify-center"
+      />
+    </div>
+  </div>
+  <div
+    class="flex h-[100%] w-[50%] items-center justify-center mobile:w-[100%]"
+  >
+    <div class="w-full mobile:p-4">
+      <div class="flex w-full items-center justify-center">
+        <input
+          type="text"
+          [(ngModel)]="country"
+          class="h-10 w-full rounded-lg border-2 border-slate-600 text-center"
+          placeholder="Agregar Ciudad"
+        />
+      </div>
+      <div class="flex w-full items-center justify-center">
+        <button
+          (click)="obtenerClima()"
+          class="my-4 w-full rounded-md bg-blue-500 p-2 text-white transition-all duration-200 hover:bg-blue-600"
+        >
+          Obtener Clima
+        </button>
+      </div>
+      <div
+        [ngClass]="isloading ? 'justify-center' : 'justify-start'"
+        class="box-border flex h-[200px] w-full items-center rounded-md border-gray-700 p-2 text-left text-gray-600 shadow-md shadow-gray-600"
+      >
+        <div class="card" *ngIf="isloading">
+          <p-progressSpinner
+            styleClass="w-4rem h-4rem"
+            strokeWidth="8"
+            fill="var(--surface-ground)"
+            animationDuration=".5s"
+          ></p-progressSpinner>
+        </div>
+        <div *ngIf="!isloading">
+          <div class="flex items-center p-2">
+            <div class="px-2 font-bold">Ciudad:</div>
+            <span class="font-semibold">{{ Nombre }}</span>
+          </div>
+
+          <div class="flex items-center p-2">
+            <div class="px-2 font-bold">Clima:</div>
+            <span class="font-semibold">{{ Descripcion }}</span>
+          </div>
+          <div class="flex items-center p-2">
+            <div class="px-2 font-bold">Temperatura:</div>
+            <span class="font-semibold">{{ Temperatura }}</span>
+          </div>
+          <div class="flex items-center p-2">
+            <div class="px-2 font-bold">Humedad:</div>
+            <span class="font-semibold">{{ Humedad }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

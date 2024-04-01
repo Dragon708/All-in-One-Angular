@@ -1,0 +1,115 @@
+<!-- Navbar -->
+
+<div
+  class="flex h-[5%] items-center justify-center rounded-t-md bg-blue-200 md:w-[658px] lg:w-[861px]"
+>
+  <div class="group flex">
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#F75F57] p-1.5"
+    >
+      <i
+        class="pi pi-times opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#FBBC2D] p-1.5"
+    >
+      <i
+        class="pi pi-minus opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#42C840] p-1.5"
+    >
+      <i
+        class="pi pi-star opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+  </div>
+  <div class="flex w-[90%] items-center justify-center text-center">
+    <span>🎼🎤🎹 Piano APP</span>
+  </div>
+</div>
+<!-- Body -->
+<div
+  class="flex h-[645px] items-center justify-center bg-transparent mobile:block mobile:h-[680px] mobile:overflow-scroll md:w-[658px] lg:w-[861px]"
+>
+  <div class="flex mobile:block mobile:p-2 md:w-[658px] lg:w-[861px]">
+    <div
+      (click)="aplicarSonido(1)"
+      class="flex h-[645px] cursor-pointer items-center justify-center bg-red-500 hover:bg-red-400 mobile:h-[95px] mobile:w-full mobile:p-2 md:w-[94px] lg:w-[123px]"
+    >
+      <div
+        class="flex items-center justify-center text-3xl font-bold tracking-wide text-white"
+      >
+        DO
+      </div>
+    </div>
+    <div
+      (click)="aplicarSonido(2)"
+      class="flex h-[645px] cursor-pointer items-center justify-center bg-orange-500 hover:bg-orange-400 mobile:h-[95px] mobile:w-full mobile:p-2 md:w-[94px] lg:w-[123px]"
+    >
+      <div
+        class="flex items-center justify-center text-3xl font-bold tracking-wide text-white"
+      >
+        RE
+      </div>
+    </div>
+    <div
+      (click)="aplicarSonido(3)"
+      class="flex h-[645px] cursor-pointer items-center justify-center bg-yellow-500 hover:bg-yellow-400 mobile:h-[95px] mobile:w-full mobile:p-2 md:w-[94px] lg:w-[123px]"
+    >
+      <div
+        class="flex items-center justify-center text-3xl font-bold tracking-wide text-white"
+      >
+        MI
+      </div>
+    </div>
+    <div
+      (click)="aplicarSonido(4)"
+      class="flex h-[645px] cursor-pointer items-center justify-center bg-green-500 hover:bg-green-400 mobile:h-[95px] mobile:w-full mobile:p-2 md:w-[94px] lg:w-[123px]"
+    >
+      <div
+        class="flex items-center justify-center text-3xl font-bold tracking-wide text-white"
+      >
+        FA
+      </div>
+    </div>
+    <div
+      (click)="aplicarSonido(5)"
+      class="flex h-[645px] cursor-pointer items-center justify-center bg-teal-500 hover:bg-teal-400 mobile:h-[95px] mobile:w-full mobile:p-2 md:w-[94px] lg:w-[123px]"
+    >
+      <div
+        class="flex items-center justify-center text-3xl font-bold tracking-wide text-white"
+      >
+        SOL
+      </div>
+    </div>
+    <div
+      (click)="aplicarSonido(6)"
+      class="flex h-[645px] cursor-pointer items-center justify-center bg-blue-500 hover:bg-blue-400 mobile:h-[95px] mobile:w-full mobile:p-2 md:w-[94px] lg:w-[123px]"
+    >
+      <div
+        class="flex items-center justify-center text-3xl font-bold tracking-wide text-white"
+      >
+        LA
+      </div>
+    </div>
+    <div
+      (click)="aplicarSonido(7)"
+      class="flex h-[645px] cursor-pointer items-center justify-center bg-purple-500 hover:bg-purple-400 mobile:h-[95px] mobile:w-full mobile:p-2 md:w-[94px] lg:w-[123px]"
+    >
+      <div
+        class="flex items-center justify-center text-3xl font-bold tracking-wide text-white"
+      >
+        SI
+      </div>
+    </div>
+  </div>
+</div>

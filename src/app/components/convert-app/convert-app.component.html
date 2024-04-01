@@ -1,0 +1,42 @@
+<!-- Navbar -->
+
+<div class="flex h-[5%] w-full items-center rounded-t-md bg-slate-200">
+  <div class="group flex">
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#F75F57] p-1.5"
+    >
+      <i
+        class="pi pi-times opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#FBBC2D] p-1.5"
+    >
+      <i
+        class="pi pi-minus opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#42C840] p-1.5"
+    >
+      <i
+        class="pi pi-star opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+  </div>
+  <div class="flex w-[90%] items-center justify-center text-center">
+    Convertidor De Monedas
+  </div>
+</div>
+<!-- Body -->
+<div
+  class="fondo h-full justify-center object-fill mobile:flex mobile:h-[680px] mobile:overflow-scroll mobile:pt-20 md:w-full lg:w-full"
+>
+  <app-convertidor></app-convertidor>
+</div>

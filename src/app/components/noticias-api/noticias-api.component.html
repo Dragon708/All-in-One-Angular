@@ -1,0 +1,49 @@
+<!-- Navbar -->
+
+<div class="flex h-[5%] w-full items-center rounded-t-md bg-blue-200">
+  <div class="group flex">
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#F75F57] p-1.5"
+    >
+      <i
+        class="pi pi-times opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#FBBC2D] p-1.5"
+    >
+      <i
+        class="pi pi-minus opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+    <button
+      (click)="cerrar()"
+      class="m-1 flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-[#42C840] p-1.5"
+    >
+      <i
+        class="pi pi-star opacity-0 transition-all duration-75 group-hover:opacity-100"
+        style="font-size: 8px; padding: 0%; color: #1a1d21"
+      ></i>
+    </button>
+  </div>
+  <div class="flex w-[90%] items-center justify-center text-center">
+    <span>Noticias APP</span>
+  </div>
+</div>
+<!-- Body -->
+<div
+  class="h-[100%] w-[100%] items-start justify-center bg-slate-50 mobile:block mobile:h-[680px] mobile:overflow-scroll"
+>
+  <app-formulario
+    (parametrosSeleccionados)="buscarNoticias($event)"
+  ></app-formulario>
+  <app-spinner *ngIf="loading"></app-spinner>
+  <app-listado-noticias
+    [listNoticias]="listNoticias"
+    class="flex items-center justify-center"
+  ></app-listado-noticias>
+</div>

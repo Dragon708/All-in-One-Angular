@@ -1,0 +1,65 @@
+<div class="h-full w-full items-center justify-center">
+  <div class="flex w-full justify-center">
+    <div class="w-[80%] p-3 mobile:w-[90%]">
+      <div class="p-3 text-center text-3xl font-medium text-white">
+        INGRESE CANTIDAD
+      </div>
+      <input
+        type="number"
+        class="flex h-10 w-[100%] items-center justify-center rounded-lg p-1 text-center text-gray-700 shadow-xl"
+        [(ngModel)]="cantidad"
+        (input)="convertir()"
+        id="cantidad"
+        placeholder="Ingrese cantidad.."
+      />
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <div class="flex w-[80%] justify-center mobile:w-[90%]">
+      <div class="flex w-1/2 items-center justify-center">
+        <div class="w-[90%]">
+          <div class="py-2 text-2xl font-medium text-white">Tengo</div>
+          <select
+            class="flex h-10 w-[100%] items-center justify-center rounded-lg p-1 text-gray-700 shadow-xl"
+            [(ngModel)]="tengo"
+            (change)="convertir()"
+          >
+            <option *ngFor="let moneda of monedas">{{ moneda }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex w-1/2 items-center justify-center">
+        <div class="w-[90%]">
+          <div class="py-2 text-2xl font-medium text-white">Quiero</div>
+          <select
+            class="flex h-10 w-[100%] items-center justify-center rounded-lg p-1 text-gray-700 shadow-xl"
+            [(ngModel)]="quiero"
+            (change)="convertir()"
+          >
+            <option
+              class="relative left-0 top-0"
+              *ngFor="let moneda of monedas"
+            >
+              {{ moneda }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h5
+    *ngIf="cantidad > 0"
+    class="mt-2 flex h-[70%] items-center justify-center gap-3 text-center text-2xl font-semibold text-[#20715B]"
+  >
+    <div class="gap-3 bg-[#ACBABA]">
+      <span class="p-2 text-5xl mobile:text-3xl"
+        >{{ cantidad | number : "0.0-2" }} {{ tengo }}</span
+      >
+      <span class="p-2 text-5xl mobile:text-3xl"> =</span>
+      <span class="p-2 text-5xl mobile:text-3xl"
+        >{{ total | number : "0.0-2" }} {{ quiero }}</span
+      >
+    </div>
+  </h5>
+</div>
